@@ -2,9 +2,11 @@
 a Neural Network that learn to copy a XOR door
 ## XOR
 
+```
     A ──┬─────┐
         │ XOR ├── C
     B ──┴─────┘
+```
 
 | A | B | => | C |
 | --- | --- | --- | --- |
@@ -15,6 +17,7 @@ a Neural Network that learn to copy a XOR door
 
 ## Neural Network Scheme
 
+```
     `input layer` `hidden layer` `ouput layer`
 
                     N2-1
@@ -24,6 +27,7 @@ a Neural Network that learn to copy a XOR door
     B   N1-2        N2-3
 
                     N2-4
+```
 
 <table>
 <thead>
