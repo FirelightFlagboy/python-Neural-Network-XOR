@@ -10,17 +10,21 @@ def loadWeigth():
 		return weigth
 
 def loadTraining():
+	ipt, opt = [], []
 	with open(const.FILE_TRAINING, 'r') as file:
 		training = json.loads(file.read())
-		for i, data in enumerate(training):
-			training[i]['input'] = np.array(data['input'])
-		return training
+		for data in training:
+			ipt.append(data['input'])
+			opt.append(data['output'])
+		return np.matrix(ipt), np.array(opt)
 
 def main():
 	weigth = loadWeigth()
 	training = loadTraining()
 
+	ipt, opt = training
 	print(weigth)
+	print(ipt.shape, opt.shape)
 	print(training)
 
 if __name__ == '__main__':
