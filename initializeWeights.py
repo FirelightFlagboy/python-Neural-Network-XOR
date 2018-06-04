@@ -5,7 +5,7 @@ import numpy as np
 def initialise():
 	weigth = {}
 	weigth['Theta1'] = np.random.rand(const.NB_HIDDEN, const.NB_INPUT + 1).tolist()
-	weigth['Theta2'] = np.random.rand(const.NB_OUPUT, const.NB_HIDDEN + 1).tolist()
+	weigth['Theta2'] = np.random.rand(const.NB_OUPUT, const.NB_HIDDEN).tolist()
 	return weigth
 
 def main():

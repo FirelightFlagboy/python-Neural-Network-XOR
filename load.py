@@ -6,7 +6,7 @@ def loadWeigth():
 	with open(const.FILE_WEIGTH, 'r') as file:
 		weigth = json.loads(file.read())
 		for key in weigth.keys():
-			weigth[key] = np.matrix(weigth[key])
+			weigth[key] = np.array(weigth[key])
 		return weigth
 
 def loadTraining():
@@ -16,7 +16,7 @@ def loadTraining():
 		for data in training:
 			ipt.append(data['input'])
 			opt.append(data['output'])
-		return np.matrix(ipt), np.array(opt)
+		return np.array(ipt), np.array([opt])
 
 def main():
 	weigth = loadWeigth()
