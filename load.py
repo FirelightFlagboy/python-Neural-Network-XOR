@@ -18,6 +18,13 @@ def loadTraining():
 			opt.append(data['output'])
 		return np.array(ipt), np.array([opt])
 
+def saveWeigth(weigth):
+	weigth['Theta1'] = weigth['Theta1'].tolist()
+	weigth['Theta2'] = weigth['Theta2'].tolist()
+	string = json.dumps(weigth, indent=4, separators=(',', ': '))
+	with open(const.FILE_WEIGTH, 'w') as file:
+		file.write(string)
+
 def main():
 	weigth = loadWeigth()
 	training = loadTraining()
@@ -26,6 +33,7 @@ def main():
 	print(weigth)
 	print(ipt.shape, opt.shape)
 	print(training)
+	saveWeigth(weigth)
 
 if __name__ == '__main__':
 	main()

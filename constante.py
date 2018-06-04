@@ -6,7 +6,7 @@ LEARNING_RATE = 0.3
 NB_BATCH = 50000
 
 # display
-SIZE_IMG = 10
+SIZE_IMG = 100
 # file name for saved weigth
 FILE_WEIGTH = 'weigth.json'
 # file for the training set

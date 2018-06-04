@@ -83,11 +83,18 @@ def updateGraph(cost, theta, fig_kit):
 	# clear axis of first graph and draw updated plot
 	ax1.clear()
 	ax1.plot(arr[:i + 1], evo, color='black')
+	ax1.set_title('cost evolution')
+	ax1.set_xlabel('iteration')
+	ax1.set_ylabel('cost')
 
 	img = createImg(const.SIZE_IMG, theta)
 	# clear img and print the new one
 	ax2.clear()
 	ax2.imshow(img, cmap='gray', origin='lower')
+	ax2.set_title('representation')
+	ax2.set_xlabel('A (in %)')
+	ax2.set_ylabel('B (in %)')
+
 	# draw image
 	fig.canvas.draw()
 	plt.pause(0.05)
@@ -97,14 +104,19 @@ def createGraph(cost, theta):
 	img = createImg(const.SIZE_IMG, theta)
 
 	plt.ioff()
-	plt.figure('finale')
+	plt.figure('finale', figsize=(10, 9))
 
 	plt.subplot(211)
 	plt.plot(arr, evo, color='black')
+	plt.title('cost evolution')
+	plt.xlabel('iteration')
+	plt.ylabel('cost')
 
 	plt.subplot(212)
 	plt.imshow(img, cmap='gray', origin='lower')
-
+	plt.title('representation')
+	plt.xlabel('A (in %)')
+	plt.ylabel('B (in %)')
 	plt.show()
 
 
@@ -113,7 +125,7 @@ def main():
 	ipt, opt = load.loadTraining()
 
 	plt.ion()
-	fig = plt.figure('training')
+	fig = plt.figure('training', figsize=(10, 9))
 	ax1 = fig.add_subplot(211)
 	ax2 = fig.add_subplot(212)
 	cost = training(weigth, ipt, opt, (fig, ax1, ax2))
